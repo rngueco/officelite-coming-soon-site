@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <script src="https://unpkg.com/vue@next"></script>
+  
+  <title>Frontend Mentor | Officelite coming soon site</title>
+</head>
+<body>
+  <main id="app">
+    <div class="introduction">
+      <h1>A simple solution to complex tasks is coming soon</h1>
+      <p>Say goodbye to inefficient juggling of multiple apps, teams, and projects. Officelite is the new collaboration platform built with an intuitive interface to improve productivity.</p>
+      <a href="#" class="cto-button">Get Started</a>
+    </div>
+    <div class="plans">
+      <ul>
+        <li v-for="plan in plansList">
+          <h2>{{ plan.name }}</h2>
+          <p>
+            <span>{{ plan.price }}</span>
+            <span>{{ plan.priceDescription }}</span>
+          </p>
+          <ul>
+            <li v-for="perk in plan.perksList">
+              {{ perk }}
+            </li>
+          </ul>
+          <a href="#">Try for free</a>
+        </li>
+      </ul>
+    </div>
+    <div class="countdown">
+      <p>Coming {{ printReleaseDate }}</p>
+      <p>
+        47 Days
+        07 Hours
+        56 Min
+        14 Sec
+      </p>
+      <a href="">Get Started</a>
+    </div>
+  </main>
+
+  <!-- If you're choosing to make this date dynamic, set it to 30 days in the future from the moment the visitor views the page -->
+  
+
+  <!-- If you're choosing to make this timer dynamic, have it countdown from the date you set above -->
+</body>
+<script src="js/app.js"></script>
+</html>
