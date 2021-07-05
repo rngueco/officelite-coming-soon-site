@@ -35,12 +35,7 @@
     </div>
     <div class="countdown">
       <p>Coming {{ printReleaseDate }}</p>
-      <p>
-        47 Days
-        07 Hours
-        56 Min
-        14 Sec
-      </p>
+      <countdown-timer v-bind:end="releaseDate"></countdown-timer>
       <a href="">Get Started</a>
     </div>
   </main>
