@@ -11,8 +11,168 @@ $soft-red: hsl(0, 83%, 65%);
 $main-font: 'Kumbh Sans', sans-serif;
 
 body {
+    background: url("../assets/home/bg-pattern-header.svg"), #FAFAFA;
+    background: {
+        size: 122vw;
+        position-x: center;
+        position-y: top -170px;
+        repeat: no-repeat;
+    }
+    margin: 0;
+    padding: 0;
     font: {
         size: 1em;
         family: $main-font;
     }
+}
+*, * *, *::after, *::before {
+    box-sizing: border-box;
+}
+h1, p {
+    margin: 0;
+}
+
+header {
+    width: 100%;
+}
+
+.logo {
+    display: block;
+    width: 155px;
+    padding: 2.875rem 0;
+    margin: 0 auto;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 6.25rem;
+    flex: {
+        direction: column;
+        wrap: nowrap;
+    }
+}
+
+.introduction {
+    display: flex;
+    align-items: center;
+    padding-top: 2.5rem;
+    gap: 4rem;
+    flex: {
+        direction: column;
+        wrap: nowrap;
+    }
+}
+
+.introduction__img {
+    width: 45.6%;
+}
+
+.introduction__content {
+    width: 87.2%;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    gap: 1.5rem;
+    flex: {
+        direction: column;
+        wrap: nowrap;
+    }
+
+    h1 {
+        color: $bluish-black;
+        line-height: 3rem;
+        font: {
+            size: 2.5rem;
+            weight: 700;
+        }
+    }
+
+    p {
+
+        color: $bluish-grey;
+        line-height: 1.625rem;
+        font: {
+            size: 1rem;
+            weight: 400;
+        }
+    }
+}
+
+.button {
+    display: block;
+    border-radius: 1.75rem;
+    padding: 0.875rem 2.5625rem;
+    text-decoration: none;
+    font: {
+        size: 1rem;
+        weight: 700;
+    }
+
+    &--primary {
+        @extend .button;
+        background: $blue;
+        color: white;
+    }
+
+    &--secondary-blue {
+        @extend .button;
+        background: hsla(228, 100%, 66%, 15.26%);
+        color: $blue;
+    }
+
+    &--secondary-white {
+        @extend .button;
+        background: white;
+        color: $blue;
+    }
+}
+
+.plans {
+    display: flex;
+    gap: 2rem;
+    flex: {
+        direction: column;
+        wrap: nowrap;
+    }
+
+    list-style: none;
+    padding: 0;
+    width: 87.2%;
+}
+
+.plans__plan {
+    border-radius: 0.8125rem;
+    background: white;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 2.5rem 0;
+    flex: {
+        direction: column;
+        wrap: nowrap;
+    }
+
+    &:nth-child(2) {
+        @extend .plans__plan;
+        background: url("../assets/home/bg-pattern-pricing.svg"), $blue;
+        background: {
+            size: 100%;
+        }
+    }
+}
+
+.plans__plan-name {
+    color: $bluish-black;
+    font: {
+        size: 1.25rem;
+        weight: 700;
+    }
+}
+
+.plans__perks {
+    list-style: none;
+    text-align: center;
+    padding: 0;
 }
