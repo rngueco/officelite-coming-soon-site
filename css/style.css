@@ -5,15 +5,24 @@ html {
 
 body {
   position: relative;
-  background: url("../assets/home/bg-pattern-header.svg"), url("../assets/home/bg-pattern-footer.svg"), linear-gradient(to bottom, #FAFAFA 68%, #262a3b 68%, #262a3b 150%);
-  background-size: 122vw, 320vw;
-  background-position-x: center, center;
-  background-position-y: top -170px, bottom -110px;
-  background-repeat: no-repeat, no-repeat;
+  background: url("../assets/home/bg-pattern-header.svg"), url("../assets/home/bg-pattern-footer.svg"), linear-gradient(to bottom, #FAFAFA 58%, #262a3b 58%, #262a3b 150%);
+  background-size: 122vw, 320vw, 100vw;
+  background-position-x: center, center, center;
+  background-position-y: top -170px, bottom -110px, center;
+  background-repeat: no-repeat, no-repeat, repeat;
   margin: 0;
   padding: 0;
   font-size: 1em;
   font-family: "Kumbh Sans", sans-serif;
+}
+@media (min-width: 768px) {
+  body {
+    background: url("../assets/home/bg-pattern-header.svg"), url("../assets/home/bg-pattern-footer.svg"), linear-gradient(to bottom, #FAFAFA 55%, #262a3b 55%, #262a3b 150%);
+    background-size: 666px, 1454px, 100vw;
+    background-position-x: right -293px, center, center;
+    background-position-y: top -164px, bottom -483px, center;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+  }
 }
 
 *, * *, *::after, *::before {
@@ -126,6 +135,14 @@ main {
   background-size: 260%;
   background-position-x: center;
   background-position-y: bottom;
+  background-repeat: no-repeat;
+}
+@media (min-width: 768px) {
+  .plans__plan:nth-child(2) {
+    background-size: 880px;
+    background-position-y: center;
+    background-position-x: left -319px;
+  }
 }
 .plans__plan:nth-child(2) .button, .plans__plan:nth-child(2) .button--primary, .plans__plan:nth-child(2) .button--secondary-blue, .plans__plan:nth-child(2) .button--secondary-white {
   background: white;
@@ -162,6 +179,7 @@ main {
 
 .countdown {
   width: 87.2%;
+  max-width: 448px;
   color: white;
   text-align: center;
   padding-bottom: 6.25rem;
@@ -211,6 +229,76 @@ main {
   opacity: 0.5;
   font-weight: 700;
   font-size: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  header, main {
+    width: 89.8%;
+    margin: 0 auto;
+  }
+
+  .logo {
+    margin: 0;
+  }
+
+  .introduction {
+    align-items: center;
+    gap: 3.9rem;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+  }
+  .introduction > * {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: calc(50% - 1.95rem);
+  }
+
+  .introduction__content {
+    text-align: start;
+    align-items: flex-start;
+  }
+
+  .plans {
+    width: 100%;
+  }
+
+  .plans__plan, .plans__plan:nth-child(2) {
+    padding: 3rem;
+    display: grid;
+    grid-template-areas: "name list" "price list" "button list";
+  }
+  .plans__plan > p, .plans__plan:nth-child(2) > p {
+    grid-area: price;
+  }
+  .plans__plan > a, .plans__plan:nth-child(2) > a {
+    white-space: nowrap;
+    width: min-content;
+    margin-top: 1.5rem;
+  }
+
+  .plans__plan-name {
+    grid-area: name;
+  }
+
+  .plans__plan-pricing {
+    text-align: start;
+  }
+
+  .plans__perks {
+    grid-area: list;
+    text-align: start;
+  }
+
+  .countdown__timer > * {
+    padding: 1.2rem 1.125rem 1rem 1.125rem;
+  }
+  .countdown__timer .number {
+    line-height: 3.5rem;
+    font-size: 3.5rem;
+  }
+  .countdown__timer label {
+    margin-bottom: -0.5rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

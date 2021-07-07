@@ -19,13 +19,24 @@ html {
 
 body {
     position: relative;
-    background: url("../assets/home/bg-pattern-header.svg"), url("../assets/home/bg-pattern-footer.svg"), linear-gradient(to bottom, #FAFAFA 68%, $bluish-black 68%, $bluish-black 150%);
+    background: url("../assets/home/bg-pattern-header.svg"), url("../assets/home/bg-pattern-footer.svg"), linear-gradient(to bottom, #FAFAFA 58%, $bluish-black 58%, $bluish-black 150%);
     background: {
-        size: 122vw, 320vw;
-        position-x: center, center;
-        position-y: top -170px, bottom -110px;
-        repeat: no-repeat, no-repeat;
+        size: 122vw, 320vw, 100vw;
+        position-x: center, center, center;
+        position-y: top -170px, bottom -110px, center;
+        repeat: no-repeat, no-repeat, repeat;
     }
+
+    @media (min-width: 768px) {
+        background: url("../assets/home/bg-pattern-header.svg"), url("../assets/home/bg-pattern-footer.svg"), linear-gradient(to bottom, #FAFAFA 55%, $bluish-black 55%, $bluish-black 150%);
+        background: {
+            size: 666px, 1454px, 100vw;
+            position-x: right -293px, center, center;
+            position-y: top -164px, bottom -483px, center;
+            repeat: no-repeat, no-repeat, no-repeat;
+        }
+    }
+
     margin: 0;
     padding: 0;
     font: {
@@ -170,6 +181,15 @@ main {
             size: 260%;
             position-x: center;
             position-y: bottom;
+            repeat: no-repeat;
+        }
+
+        @media (min-width: 768px) {
+            background: {
+                size: 880px;
+                position-y: center;
+                position-x: left -319px;
+            }
         }
 
         .button {
@@ -215,6 +235,7 @@ main {
 
 .countdown {
     width: 87.2%;
+    max-width: 448px;
     color: white;
     text-align: center;
     padding-bottom: 6.25rem;
@@ -282,6 +303,92 @@ main {
         font: {
             weight: 700;
             size: 0.75rem;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    header, main {
+        width: 89.8%;
+        margin: 0 auto;
+    }
+
+    .logo {
+        margin: 0;
+    }
+
+    .introduction {
+        align-items: center;
+        gap: 3.9rem;
+        flex: {
+            direction: row-reverse;
+            wrap: nowrap;
+        }
+
+        & > * {
+            flex: {
+                grow: 0;
+                shrink: 0;
+                basis: calc(50% - 1.95rem);
+            }
+        }
+    }
+
+    .introduction__content {
+        text-align: start;
+        align-items: flex-start;
+    }
+
+    .plans {
+        width: 100%;
+    }
+
+    .plans__plan {
+        padding: 3rem;
+        display: grid;
+        grid-template-areas: 
+            "name list"
+            "price list"
+            "button list";
+
+        & > p {
+            grid-area: price;
+        }
+
+        & > a {
+            white-space: nowrap;
+            width: min-content;
+            margin-top: 1.5rem;
+        }
+    }
+
+    .plans__plan-name {
+        grid-area: name;
+    }
+
+    .plans__plan-pricing {
+        text-align: start;
+    }
+
+    .plans__perks {
+        grid-area: list;
+        text-align: start;
+    }
+
+    .countdown__timer {
+        & > * {
+            padding: 1.2rem 1.125rem 1rem 1.125rem;
+        }
+
+        & .number {
+            line-height: 3.5rem;
+            font: {
+                size: 3.5rem;
+            }
+        }
+
+        & label {
+            margin-bottom: -0.5rem;
         }
     }
 }
