@@ -131,7 +131,7 @@ main {
 
 .button {
     border-radius: 1.75rem;
-    padding: 0.875rem 2.5625rem;
+    padding: calc(0.875rem + 3px) 2.5625rem 0.875rem 2.5625rem;
     text-decoration: none;
     font: {
         size: 1rem;
