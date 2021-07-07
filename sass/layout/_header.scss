@@ -1,0 +1,36 @@
+// --- CONFIGURABLES -- // 
+$tablet-width: 768px !default;
+$desktop-width: 1260px !default;
+
+$tablet-header-width: 89.8% !default;
+$desktop-header-width: 77% !default;
+
+header {
+    width: 100%;
+}
+
+.logo {
+    display: block;
+    width: 155px;
+    padding: 2.875rem 0;
+    margin: 0 auto;
+}
+
+@media (min-width: $tablet-width) {
+    header {
+        width: $tablet-header-width;
+        margin: 0 auto;
+    }
+
+    .logo {
+        margin: 0;
+    }
+}
+
+@media (min-width: $desktop-width) {
+    header {
+        width: $desktop-header-width;
+        margin: 0 auto;
+    }
+
+}

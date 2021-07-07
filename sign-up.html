@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/signup.css">
   <script src="https://unpkg.com/vue@3.1.4/dist/vue.global.js"></script>
 
   <title>Frontend Mentor | Officelite coming soon site</title>
@@ -15,8 +15,8 @@
     <img src="assets/shared/logo.svg" alt="Officelite" class="logo">
   </header>
   <main id="app" class="sign-up">
-    <div class="introduction">
-      <div class="introduction__content">
+    <div>
+      <div class="introduction__content sign-up">
         <h1>Work smarter. Save time.</h1>
         <p>Easily manage your projects. Get on the list and receive in-app perks available only to early subscribers. We are moving into final development and getting ready for official launch soon.</p>
       </div>
@@ -24,7 +24,7 @@
     <div class="countdown--light">
       <countdown-timer v-bind:end="releaseDate"></countdown-timer>
     </div>
-    <form action="" id="subscription-form">
+    <form action="" class="subscription-form">
       <input type="text" name="name" id="name" aria-label="Full name" placeholder="Name">
       <input type="email" name="email" id="email" aria-label="Email address" placeholder="Email Address">
       <select name="plan-type" id="plan-type" aria-label="Subscription type">
