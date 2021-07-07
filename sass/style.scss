@@ -47,6 +47,16 @@ body {
         }
     }
 
+    &.sign-up {
+        background: url("../assets/home/bg-pattern-header.svg"), url("../assets/home/bg-pattern-footer.svg"), linear-gradient(to bottom, #FAFAFA 74%, $bluish-black 74%, $bluish-black 150%);
+        background: {
+            size: 122vw, 320vw, 100vw;
+            position-x: center, center, center;
+            position-y: top -170px, bottom -110px, center;
+            repeat: no-repeat, no-repeat, repeat;
+        }
+    }
+
     margin: 0;
     padding: 0;
     font: {
@@ -77,9 +87,14 @@ main {
     display: flex;
     align-items: center;
     gap: 6.25rem;
+    padding-bottom: 2rem;
     flex: {
         direction: column;
         wrap: nowrap;
+    }
+
+    &.sign-up {
+        gap: 4rem;
     }
 }
 
@@ -257,7 +272,32 @@ main {
     max-width: 448px;
     color: white;
     text-align: center;
-    padding-bottom: 6.25rem;
+
+    &--light {
+        @extend .countdown;
+        color: $bluish-black;
+
+        .countdown__timer > * {
+            background: hsl(228, 100%, 66%, 0.1);
+        }
+
+        .number {
+            color: $blue;
+        }
+    }
+
+    &--dark {
+        @extend .countdown;
+        color: $bluish-grey;
+
+        .countdown__timer > * {
+            background: $dark-blue;
+        }
+
+        .number {
+            color: white;
+        }
+    }
 
     p {
         text: {
@@ -274,10 +314,6 @@ main {
 
     .release-date {
         color: $blue;
-    }
-
-    a {
-        margin-bottom: 6.25rem;
     }
 }
 
@@ -301,7 +337,6 @@ main {
 
         overflow: hidden;
         border-radius: 4px;
-        background: $dark-blue;
         padding: 0.625rem 1rem;
     }
 
@@ -323,6 +358,53 @@ main {
             weight: 700;
             size: 0.75rem;
         }
+    }
+}
+
+#subscription-form {
+    width: 87.2%;
+    margin: 0 auto;
+    background: white;
+    border-radius: 13px;
+    padding: 1.5rem;
+
+    display: flex;
+    gap: 1.5rem;
+    flex: {
+        direction: column;
+        wrap: nowrap;
+    }
+
+    input:not([type="submit"]), select {
+        border: none;
+        border-bottom: 1px solid hsla(227, 14%, 52%, 0.5);
+        padding-bottom: 1rem;
+        padding-inline-start: 1rem;
+        font-family: inherit;
+
+        &::placeholder {
+            font: {
+                size: 1rem;
+                weight: 400;
+            }
+
+            color: hsla(227, 14%, 52%, 0.5);
+        }
+    }
+
+    select {
+        font: {
+            size: 1rem;
+            weight: 700;
+        }
+
+        .pack-label {
+            color: $bluish-grey;
+        }
+    }
+
+    input[type="submit"] {
+        border: none;
     }
 }
 

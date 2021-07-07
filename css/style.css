@@ -33,6 +33,13 @@ body {
     background-repeat: no-repeat, no-repeat, no-repeat;
   }
 }
+body.sign-up {
+  background: url("../assets/home/bg-pattern-header.svg"), url("../assets/home/bg-pattern-footer.svg"), linear-gradient(to bottom, #FAFAFA 74%, #262a3b 74%, #262a3b 150%);
+  background-size: 122vw, 320vw, 100vw;
+  background-position-x: center, center, center;
+  background-position-y: top -170px, bottom -110px, center;
+  background-repeat: no-repeat, no-repeat, repeat;
+}
 
 *, * *, *::after, *::before {
   box-sizing: border-box;
@@ -58,8 +65,12 @@ main {
   display: flex;
   align-items: center;
   gap: 6.25rem;
+  padding-bottom: 2rem;
   flex-direction: column;
   flex-wrap: nowrap;
+}
+main.sign-up {
+  gap: 4rem;
 }
 
 .introduction {
@@ -194,25 +205,39 @@ main {
   margin-bottom: 1rem;
 }
 
-.countdown {
+.countdown, .countdown--dark, .countdown--light {
   width: 87.2%;
   max-width: 448px;
   color: white;
   text-align: center;
-  padding-bottom: 6.25rem;
 }
-.countdown p {
+.countdown--light {
+  color: #262a3b;
+}
+.countdown--light .countdown__timer > * {
+  background: rgba(82, 116, 255, 0.1);
+}
+.countdown--light .number {
+  color: #5274ff;
+}
+.countdown--dark {
+  color: #757c95;
+}
+.countdown--dark .countdown__timer > * {
+  background: #343a51;
+}
+.countdown--dark .number {
+  color: white;
+}
+.countdown p, .countdown--light p, .countdown--dark p {
   text-transform: uppercase;
   letter-spacing: 5px;
   margin-bottom: 1.125rem;
   line-height: 3rem;
   font-weight: 700;
 }
-.countdown .release-date {
+.countdown .release-date, .countdown--light .release-date, .countdown--dark .release-date {
   color: #5274ff;
-}
-.countdown a {
-  margin-bottom: 6.25rem;
 }
 
 .countdown__timer {
@@ -230,7 +255,6 @@ main {
   flex-basis: calc(25% - 0.8125rem);
   overflow: hidden;
   border-radius: 4px;
-  background: #343a51;
   padding: 0.625rem 1rem;
 }
 .countdown__timer .number {
@@ -246,6 +270,40 @@ main {
   opacity: 0.5;
   font-weight: 700;
   font-size: 0.75rem;
+}
+
+#subscription-form {
+  width: 87.2%;
+  margin: 0 auto;
+  background: white;
+  border-radius: 13px;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1.5rem;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+#subscription-form input:not([type=submit]), #subscription-form select {
+  border: none;
+  border-bottom: 1px solid rgba(115, 123, 150, 0.5);
+  padding-bottom: 1rem;
+  padding-inline-start: 1rem;
+  font-family: inherit;
+}
+#subscription-form input:not([type=submit])::placeholder, #subscription-form select::placeholder {
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgba(115, 123, 150, 0.5);
+}
+#subscription-form select {
+  font-size: 1rem;
+  font-weight: 700;
+}
+#subscription-form select .pack-label {
+  color: #757c95;
+}
+#subscription-form input[type=submit] {
+  border: none;
 }
 
 @media (min-width: 768px) {
@@ -363,7 +421,7 @@ main {
     text-align: center;
   }
 
-  .countdown {
+  .countdown, .countdown--light, .countdown--dark {
     text-align: start;
     max-width: 100%;
     width: 100%;
@@ -374,7 +432,7 @@ main {
     margin-bottom: 2rem;
     grid-template-areas: "release button" "timer button";
   }
-  .countdown > a {
+  .countdown > a, .countdown--light > a, .countdown--dark > a {
     grid-area: button;
     margin: 0;
     justify-self: end;
