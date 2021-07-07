@@ -67,6 +67,26 @@
   font-size: 0.75rem;
 }
 
+.button, .button--secondary-white, .button--secondary-blue, .button--primary {
+  border-radius: 1.75rem;
+  padding: calc(0.875rem + 3px) 2.5625rem 0.875rem 2.5625rem;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.button--primary {
+  background: #5274ff;
+  color: white;
+}
+.button--secondary-blue {
+  background: rgba(82, 116, 255, 0.1526);
+  color: #5274ff;
+}
+.button--secondary-white {
+  background: white;
+  color: #5274ff;
+}
+
 header {
   width: 100%;
 }
@@ -191,26 +211,6 @@ main.sign-up {
   font-weight: 400;
 }
 
-.button, .button--secondary-white, .button--secondary-blue, .button--primary {
-  border-radius: 1.75rem;
-  padding: calc(0.875rem + 3px) 2.5625rem 0.875rem 2.5625rem;
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: 700;
-}
-.button--primary {
-  background: #5274ff;
-  color: white;
-}
-.button--secondary-blue {
-  background: rgba(82, 116, 255, 0.1526);
-  color: #5274ff;
-}
-.button--secondary-white {
-  background: white;
-  color: #5274ff;
-}
-
 .plans {
   display: flex;
   gap: 2rem;
@@ -255,10 +255,6 @@ main.sign-up {
     background-repeat: no-repeat;
   }
 }
-.plans__plan:nth-child(2) .button, .plans__plan:nth-child(2) .button--primary, .plans__plan:nth-child(2) .button--secondary-blue, .plans__plan:nth-child(2) .button--secondary-white {
-  background: white;
-  color: #5274ff;
-}
 .plans__plan:nth-child(2) .plans__perks {
   color: inherit;
   opacity: 0.75;
@@ -286,40 +282,6 @@ main.sign-up {
 }
 .plans__perks > li:not(:last-child) {
   margin-bottom: 1rem;
-}
-
-#subscription-form {
-  width: 87.2%;
-  margin: 0 auto;
-  background: white;
-  border-radius: 13px;
-  padding: 1.5rem;
-  display: flex;
-  gap: 1.5rem;
-  flex-direction: column;
-  flex-wrap: nowrap;
-}
-#subscription-form input:not([type=submit]), #subscription-form select {
-  border: none;
-  border-bottom: 1px solid rgba(115, 123, 150, 0.5);
-  padding-bottom: 1rem;
-  padding-inline-start: 1rem;
-  font-family: inherit;
-}
-#subscription-form input:not([type=submit])::placeholder, #subscription-form select::placeholder {
-  font-size: 1rem;
-  font-weight: 400;
-  color: rgba(115, 123, 150, 0.5);
-}
-#subscription-form select {
-  font-size: 1rem;
-  font-weight: 700;
-}
-#subscription-form select .pack-label {
-  color: #757c95;
-}
-#subscription-form input[type=submit] {
-  border: none;
 }
 
 @media (min-width: 768px) {

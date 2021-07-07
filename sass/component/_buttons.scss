@@ -1,0 +1,33 @@
+@use "sass:color";
+
+// -- CONFIGURABLES -- // 
+$primary-color: hsl(228, 100%, 66%) !default;
+@debug color.adjust($primary-color, $alpha: -0.8474);
+
+.button {
+    border-radius: 1.75rem;
+    padding: calc(0.875rem + 3px) 2.5625rem 0.875rem 2.5625rem;
+    text-decoration: none;
+    font: {
+        size: 1rem;
+        weight: 700;
+    }
+
+    &--primary {
+        @extend .button;
+        background: $primary-color;
+        color: white;
+    }
+
+    &--secondary-blue {
+        @extend .button;
+        background: color.adjust($primary-color, $alpha: -0.8474);
+        color: $primary-color;
+    }
+
+    &--secondary-white {
+        @extend .button;
+        background: white;
+        color: $primary-color;
+    }
+}

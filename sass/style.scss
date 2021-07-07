@@ -1,5 +1,6 @@
 @use "abstract/variables" as *;
 @use "component/countdown" as *;
+@use "component/buttons" as *;
 @use "layout/header" as *;
 @use "layout/background" as *;
 
@@ -92,34 +93,6 @@ main {
     }
 }
 
-.button {
-    border-radius: 1.75rem;
-    padding: calc(0.875rem + 3px) 2.5625rem 0.875rem 2.5625rem;
-    text-decoration: none;
-    font: {
-        size: 1rem;
-        weight: 700;
-    }
-
-    &--primary {
-        @extend .button;
-        background: $blue;
-        color: white;
-    }
-
-    &--secondary-blue {
-        @extend .button;
-        background: hsla(228, 100%, 66%, 15.26%);
-        color: $blue;
-    }
-
-    &--secondary-white {
-        @extend .button;
-        background: white;
-        color: $blue;
-    }
-}
-
 .plans {
     display: flex;
     gap: 2rem;
@@ -172,11 +145,6 @@ main {
                 position-y: bottom;
                 repeat: no-repeat;
             }
-        } 
-
-        .button {
-            background: white;
-            color: $blue;
         }
 
         .plans__perks {
