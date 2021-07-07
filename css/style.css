@@ -1,4 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #262a3b;
+}
+
+*, * *, *::after, *::before {
+  box-sizing: border-box;
+}
+
+h1, p {
+  margin: 0;
+}
+
 .countdown, .countdown--dark, .countdown--light {
   width: 87.2%;
   max-width: 448px;
@@ -140,13 +155,6 @@ body {
   }
 }
 
-body {
-  position: relative;
-  margin: 0;
-  padding: 0;
-  font-size: 1em;
-  font-family: "Kumbh Sans", sans-serif;
-}
 body.sign-up {
   background: url("../assets/home/bg-pattern-header.svg"), url("../assets/home/bg-pattern-footer.svg"), linear-gradient(to bottom, #FAFAFA 74%, #262a3b 74%, #262a3b 150%);
   background-size: 122vw, 320vw, 100vw;

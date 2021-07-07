@@ -9,3 +9,16 @@ $bluish-grey: hsl(227, 13%, 52%);
 $soft-red: hsl(0, 83%, 65%);
 
 $main-font: 'Kumbh Sans', sans-serif;
+
+body {
+    font-family: $main-font;
+    margin: 0;
+    padding: 0;
+    color: $bluish-black;
+}
+*, * *, *::after, *::before {
+    box-sizing: border-box;
+}
+h1, p {
+    margin: 0;
+}

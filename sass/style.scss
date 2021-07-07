@@ -4,33 +4,6 @@
 @use "layout/header" as *;
 @use "layout/background" as *;
 
-body {
-    position: relative;
-
-    &.sign-up {
-        background: url("../assets/home/bg-pattern-header.svg"), url("../assets/home/bg-pattern-footer.svg"), linear-gradient(to bottom, #FAFAFA 74%, $bluish-black 74%, $bluish-black 150%);
-        background: {
-            size: 122vw, 320vw, 100vw;
-            position-x: center, center, center;
-            position-y: top -170px, bottom -110px, center;
-            repeat: no-repeat, no-repeat, repeat;
-        }
-    }
-
-    margin: 0;
-    padding: 0;
-    font: {
-        size: 1em;
-        family: $main-font;
-    }
-}
-*, * *, *::after, *::before {
-    box-sizing: border-box;
-}
-h1, p {
-    margin: 0;
-}
-
 main {
     width: 100%;
     display: flex;

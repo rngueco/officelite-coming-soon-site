@@ -1,5 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #262a3b;
+}
+
+*, * *, *::after, *::before {
+  box-sizing: border-box;
+}
+
+h1, p {
+  margin: 0;
+}
+
 .countdown, .countdown--dark, .countdown--light {
   width: 87.2%;
   max-width: 448px;
@@ -100,6 +115,26 @@
 }
 .subscription-form input[type=submit] {
   border: none;
+}
+
+.button, .button--secondary-white, .button--secondary-blue, .button--primary {
+  border-radius: 1.75rem;
+  padding: calc(0.875rem + 3px) 2.5625rem 0.875rem 2.5625rem;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.button--primary {
+  background: #5274ff;
+  color: white;
+}
+.button--secondary-blue {
+  background: rgba(82, 116, 255, 0.1526);
+  color: #5274ff;
+}
+.button--secondary-white {
+  background: white;
+  color: #5274ff;
 }
 
 header {
