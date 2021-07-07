@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+// -- CONFIGURABLES -- // 
+$font: 'Kumbh Sans' !default;
+$text: hsl(227, 13%, 52%) !default;
+
+.subscription-form {
+    width: 87.2%;
+    margin: 0 auto;
+    background: white;
+    border-radius: 13px;
+    padding: 1.5rem;
+
+    display: flex;
+    gap: 1.5rem;
+    flex: {
+        direction: column;
+        wrap: nowrap;
+    }
+
+    input:not([type="submit"]), select {
+        border: none;
+        border-bottom: 1px solid hsla(227, 14%, 52%, 0.5);
+        padding-bottom: 1rem;
+        padding-inline-start: 1rem;
+        font-family: $font, sans-serif;
+
+        &::placeholder {
+            font: {
+                size: 1rem;
+                weight: 400;
+            }
+
+            color: hsla(227, 14%, 52%, 0.5);
+        }
+    }
+
+    select {
+        font: {
+            size: 1rem;
+            weight: 700;
+        }
+
+        .pack-label {
+            color: $text;
+        }
+    }
+
+    input[type="submit"] {
+        border: none;
+    }
+}
