@@ -1,42 +1,10 @@
-@use "variables" as *;
-@use "countdown" as *;
-
-html {
-    // Body background is offset 170px towards the
-    // -y position, so there's an empty space at the
-    // bottom of the document. 
-    background: $bluish-black;
-}
+@use "abstract/variables" as *;
+@use "component/countdown" as *;
+@use "layout/header" as *;
+@use "layout/background" as *;
 
 body {
     position: relative;
-    background: url("../assets/home/bg-pattern-header.svg"), url("../assets/home/bg-pattern-footer.svg"), linear-gradient(to bottom, #FAFAFA 58%, $bluish-black 58%, $bluish-black 150%);
-    background: {
-        size: 122vw, 320vw, 100vw;
-        position-x: center, center, center;
-        position-y: top -170px, bottom -110px, center;
-        repeat: no-repeat, no-repeat, repeat;
-    }
-
-    @media (min-width: 768px) {
-        background: url("../assets/home/bg-pattern-header.svg"), url("../assets/home/bg-pattern-footer.svg"), linear-gradient(to bottom, #FAFAFA 55%, $bluish-black 55%, $bluish-black 150%);
-        background: {
-            size: 666px, 1454px, 100vw;
-            position-x: right -350px, center, center;
-            position-y: top -419px, bottom -483px, center;
-            repeat: no-repeat, no-repeat, no-repeat;
-        }
-    }
-
-    @media (min-width: 1260px) {
-        background: url("../assets/home/bg-pattern-header.svg"), url("../assets/home/bg-pattern-footer.svg"), linear-gradient(to bottom, #FAFAFA 66%, $bluish-black 66%, $bluish-black 150%);
-        background: {
-            size: 1134px, 2036px, 100vw;
-            position-x: right -293px, left -706px, center;
-            position-y: top -164px, bottom -819px, center;
-            repeat: no-repeat, no-repeat, no-repeat;
-        }
-    }
 
     &.sign-up {
         background: url("../assets/home/bg-pattern-header.svg"), url("../assets/home/bg-pattern-footer.svg"), linear-gradient(to bottom, #FAFAFA 74%, $bluish-black 74%, $bluish-black 150%);
@@ -60,17 +28,6 @@ body {
 }
 h1, p {
     margin: 0;
-}
-
-header {
-    width: 100%;
-}
-
-.logo {
-    display: block;
-    width: 155px;
-    padding: 2.875rem 0;
-    margin: 0 auto;
 }
 
 main {
@@ -258,61 +215,14 @@ main {
     }
 }
 
-#subscription-form {
-    width: 87.2%;
-    margin: 0 auto;
-    background: white;
-    border-radius: 13px;
-    padding: 1.5rem;
-
-    display: flex;
-    gap: 1.5rem;
-    flex: {
-        direction: column;
-        wrap: nowrap;
-    }
-
-    input:not([type="submit"]), select {
-        border: none;
-        border-bottom: 1px solid hsla(227, 14%, 52%, 0.5);
-        padding-bottom: 1rem;
-        padding-inline-start: 1rem;
-        font-family: inherit;
-
-        &::placeholder {
-            font: {
-                size: 1rem;
-                weight: 400;
-            }
-
-            color: hsla(227, 14%, 52%, 0.5);
-        }
-    }
-
-    select {
-        font: {
-            size: 1rem;
-            weight: 700;
-        }
-
-        .pack-label {
-            color: $bluish-grey;
-        }
-    }
-
-    input[type="submit"] {
-        border: none;
-    }
-}
-
 @media (min-width: 768px) {
-    header, main {
+    main {
         width: 89.8%;
         margin: 0 auto;
     }
 
-    .logo {
-        margin: 0;
+    main.sign-up {
+        padding-bottom: 7.7rem;
     }
 
     .introduction {
@@ -335,6 +245,13 @@ main {
     .introduction__content {
         text-align: start;
         align-items: flex-start;
+
+        &.sign-up {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            align-items: center;
+        }
     }
 
     .plans {
@@ -390,10 +307,14 @@ main {
             margin-bottom: -0.5rem;
         }
     }
+
+    #subscription-form {
+        max-width: 448px;
+    }
 }
 
 @media (min-width: 1260px) {
-    header, main {
+    main {
         width: 77%;
         margin: 0 auto;
     }

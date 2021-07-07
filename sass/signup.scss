@@ -1,0 +1,7 @@
+@use "abstract/variables" as *;
+@use "component/countdown" as *;
+@use "component/subscription-form" as *;
+@use "layout/header" as *;
+@use "layout/background" as * with(
+    $mobile-bg-breakpoint: 74%
+);

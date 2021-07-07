@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+.countdown, .countdown--dark, .countdown--light {
+  width: 87.2%;
+  max-width: 448px;
+  color: #262a3b;
+  text-align: center;
+}
+.countdown p, .countdown--dark p, .countdown--light p {
+  letter-spacing: 5px;
+  margin-bottom: 1.125rem;
+  line-height: 3rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+}
+.countdown .release-date, .countdown--dark .release-date, .countdown--light .release-date {
+  color: #5274ff;
+}
+.countdown--light {
+  color: #262a3b;
+}
+.countdown--light .countdown__timer > * {
+  background: rgba(82, 116, 255, 0.1);
+}
+.countdown--light .number {
+  color: #5274ff;
+}
+.countdown--dark {
+  color: #757c95;
+}
+.countdown--dark .countdown__timer > * {
+  background: #343a51;
+}
+.countdown--dark .number {
+  color: white;
+}
+
+.countdown__timer {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8125rem;
+  margin-bottom: 2.5rem;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.countdown__timer > * {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: calc(25% - 0.8125rem);
+  overflow: hidden;
+  border-radius: 4px;
+  padding: 0.625rem 1rem;
+}
+.countdown__timer .number {
+  display: block;
+  line-height: 3rem;
+  transform: translateX(-2px);
+  margin-bottom: -0.5rem;
+  font-weight: 700;
+  font-size: 2rem;
+}
+.countdown__timer .label {
+  line-height: 1.75rem;
+  opacity: 0.5;
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+
+.subscription-form {
+  width: 87.2%;
+  margin: 0 auto;
+  background: white;
+  border-radius: 13px;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1.5rem;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+.subscription-form input:not([type=submit]), .subscription-form select {
+  border: none;
+  border-bottom: 1px solid rgba(115, 123, 150, 0.5);
+  padding-bottom: 1rem;
+  padding-inline-start: 1rem;
+  font-family: "Kumbh Sans", sans-serif;
+}
+.subscription-form input:not([type=submit])::placeholder, .subscription-form select::placeholder {
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgba(115, 123, 150, 0.5);
+}
+.subscription-form select {
+  font-size: 1rem;
+  font-weight: 700;
+}
+.subscription-form select .pack-label {
+  color: #757c95;
+}
+.subscription-form input[type=submit] {
+  border: none;
+}
+
+header {
+  width: 100%;
+}
+
+.logo {
+  display: block;
+  width: 155px;
+  padding: 2.875rem 0;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  header {
+    width: 89.8%;
+    margin: 0 auto;
+  }
+
+  .logo {
+    margin: 0;
+  }
+}
+@media (min-width: 1260px) {
+  header {
+    width: 77%;
+    margin: 0 auto;
+  }
+}
+body {
+  background: url("../../assets/home/bg-pattern-header.svg"), url("../../assets/home/bg-pattern-footer.svg"), linear-gradient(to bottom, #FAFAFA 74%, #262a3b 74%);
+  background-size: 122vw, 320vw, 100vw;
+  background-position-x: center, center, center;
+  background-position-y: top -170px, bottom -110px, center;
+  background-repeat: no-repeat, no-repeat, repeat;
+}
+@media (min-width: 768px) {
+  body {
+    background: url("../../assets/home/bg-pattern-header.svg"), url("../../assets/home/bg-pattern-footer.svg"), linear-gradient(to bottom, #FAFAFA 55%, #262a3b 55%);
+    background-size: 666px, 1454px, 100vw;
+    background-position-x: right -350px, center, center;
+    background-position-y: top -419px, bottom -483px, center;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+  }
+}
+@media (min-width: 1260px) {
+  body {
+    background: url("../../assets/home/bg-pattern-header.svg"), url("../../assets/home/bg-pattern-footer.svg"), linear-gradient(to bottom, #FAFAFA 66%, #262a3b 66%);
+    background-size: 1134px, 2036px, 100vw;
+    background-position-x: right -293px, left -706px, center;
+    background-position-y: top -164px, bottom -819px, center;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+  }
+}
+
+/*# sourceMappingURL=signup.css.map */
