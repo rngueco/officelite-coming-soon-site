@@ -19,8 +19,17 @@ body {
   body {
     background: url("../assets/home/bg-pattern-header.svg"), url("../assets/home/bg-pattern-footer.svg"), linear-gradient(to bottom, #FAFAFA 55%, #262a3b 55%, #262a3b 150%);
     background-size: 666px, 1454px, 100vw;
-    background-position-x: right -293px, center, center;
-    background-position-y: top -164px, bottom -483px, center;
+    background-position-x: right -350px, center, center;
+    background-position-y: top -419px, bottom -483px, center;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+  }
+}
+@media (min-width: 1260px) {
+  body {
+    background: url("../assets/home/bg-pattern-header.svg"), url("../assets/home/bg-pattern-footer.svg"), linear-gradient(to bottom, #FAFAFA 66%, #262a3b 66%, #262a3b 150%);
+    background-size: 1134px, 2036px, 100vw;
+    background-position-x: right -293px, left -706px, center;
+    background-position-y: top -164px, bottom -819px, center;
     background-repeat: no-repeat, no-repeat, no-repeat;
   }
 }
@@ -144,6 +153,14 @@ main {
     background-position-x: left -319px;
   }
 }
+@media (min-width: 1260px) {
+  .plans__plan:nth-child(2) {
+    background-size: 200%;
+    background-position-x: center;
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+  }
+}
 .plans__plan:nth-child(2) .button, .plans__plan:nth-child(2) .button--primary, .plans__plan:nth-child(2) .button--secondary-blue, .plans__plan:nth-child(2) .button--secondary-white {
   background: white;
   color: #5274ff;
@@ -260,6 +277,7 @@ main {
 
   .plans {
     width: 100%;
+    gap: 1.5rem;
   }
 
   .plans__plan, .plans__plan:nth-child(2) {
@@ -298,6 +316,80 @@ main {
   }
   .countdown__timer label {
     margin-bottom: -0.5rem;
+  }
+}
+@media (min-width: 1260px) {
+  header, main {
+    width: 77%;
+    margin: 0 auto;
+  }
+
+  .introduction {
+    gap: 5.94rem;
+  }
+  .introduction > * {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: calc(50% - 2.8rem);
+  }
+
+  .introduction__content h1 {
+    line-height: 4rem;
+    font-size: 3.5rem;
+  }
+  .introduction__content p {
+    line-height: 1.75rem;
+    font-size: 1.125rem;
+  }
+
+  .plans {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  .plans__plan, .plans__plan:nth-child(2) {
+    display: flex;
+    width: 100%;
+    gap: 2rem;
+    padding: 2.5rem 0;
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+  .plans__plan > *, .plans__plan:nth-child(2) > * {
+    flex-grow: 1;
+  }
+
+  .plans__perks {
+    text-align: center;
+  }
+
+  .countdown {
+    text-align: start;
+    max-width: 100%;
+    width: 100%;
+    display: grid;
+    align-items: center;
+    gap: 1rem;
+    padding: 0;
+    margin-bottom: 2rem;
+    grid-template-areas: "release button" "timer button";
+  }
+  .countdown > a {
+    grid-area: button;
+    margin: 0;
+    justify-self: end;
+    height: max-content;
+    width: max-content;
+  }
+
+  .release-date {
+    grid-area: release;
+  }
+
+  .countdown__timer {
+    grid-area: timer;
+    width: 448px;
+    margin: 0;
   }
 }
 

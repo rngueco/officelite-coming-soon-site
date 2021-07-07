@@ -31,8 +31,18 @@ body {
         background: url("../assets/home/bg-pattern-header.svg"), url("../assets/home/bg-pattern-footer.svg"), linear-gradient(to bottom, #FAFAFA 55%, $bluish-black 55%, $bluish-black 150%);
         background: {
             size: 666px, 1454px, 100vw;
-            position-x: right -293px, center, center;
-            position-y: top -164px, bottom -483px, center;
+            position-x: right -350px, center, center;
+            position-y: top -419px, bottom -483px, center;
+            repeat: no-repeat, no-repeat, no-repeat;
+        }
+    }
+
+    @media (min-width: 1260px) {
+        background: url("../assets/home/bg-pattern-header.svg"), url("../assets/home/bg-pattern-footer.svg"), linear-gradient(to bottom, #FAFAFA 66%, $bluish-black 66%, $bluish-black 150%);
+        background: {
+            size: 1134px, 2036px, 100vw;
+            position-x: right -293px, left -706px, center;
+            position-y: top -164px, bottom -819px, center;
             repeat: no-repeat, no-repeat, no-repeat;
         }
     }
@@ -192,6 +202,15 @@ main {
             }
         }
 
+        @media (min-width: 1260px) {
+            background: {
+                size: 200%;
+                position-x: center;
+                position-y: bottom;
+                repeat: no-repeat;
+            }
+        } 
+
         .button {
             background: white;
             color: $blue;
@@ -341,6 +360,7 @@ main {
 
     .plans {
         width: 100%;
+        gap: 1.5rem;
     }
 
     .plans__plan {
@@ -390,5 +410,100 @@ main {
         & label {
             margin-bottom: -0.5rem;
         }
+    }
+}
+
+@media (min-width: 1260px) {
+    header, main {
+        width: 77%;
+        margin: 0 auto;
+    }
+
+    .introduction {
+        gap: 5.94rem;
+
+        & > * {
+            flex: {
+                grow: 0;
+                shrink: 0;
+                basis: calc(50% - 2.8rem);
+            }
+        }
+    }
+
+    .introduction__content {
+        h1 {
+            line-height: 4rem;
+            font: {
+                size: 3.5rem;
+            }
+        }
+
+        p {
+            line-height: 1.75rem;
+            font: {
+                size: 1.125rem;
+            }
+        }
+    }
+
+    .plans {
+        flex: {
+            direction: row;
+            wrap: nowrap;
+        }
+    }
+
+    .plans__plan {
+        display: flex;
+        width: 100%;
+        gap: 2rem;
+        padding: 2.5rem 0;
+        flex: {
+            direction: column;
+            wrap: nowrap;
+        }
+
+        & > * {
+            flex: {
+                grow: 1;
+            }
+        }
+    }
+
+    .plans__perks {
+        text-align: center;
+    }
+
+    .countdown {
+        text-align: start;
+        max-width: 100%;
+        width: 100%;
+        display: grid;
+        align-items: center;
+        gap: 1rem;
+        padding: 0;
+        margin-bottom: 2rem;
+        grid-template-areas: 
+            "release button"
+            "timer button";
+
+        & > a {
+            grid-area: button;
+            margin: 0;
+            justify-self: end;
+            height: max-content;
+            width: max-content;
+        }
+    }
+
+    .release-date {
+        grid-area: release;
+    }
+
+    .countdown__timer {
+        grid-area: timer;
+        width: 448px;
+        margin: 0;
     }
 }
