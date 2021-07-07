@@ -1,4 +1,72 @@
 @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+.countdown, .countdown--dark, .countdown--light {
+  width: 87.2%;
+  max-width: 448px;
+  color: #262a3b;
+  text-align: center;
+}
+.countdown p, .countdown--dark p, .countdown--light p {
+  letter-spacing: 5px;
+  margin-bottom: 1.125rem;
+  line-height: 3rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+}
+.countdown .release-date, .countdown--dark .release-date, .countdown--light .release-date {
+  color: #5274ff;
+}
+.countdown--light {
+  color: #262a3b;
+}
+.countdown--light .countdown__timer > * {
+  background: rgba(82, 116, 255, 0.1);
+}
+.countdown--light .number {
+  color: #5274ff;
+}
+.countdown--dark {
+  color: #757c95;
+}
+.countdown--dark .countdown__timer > * {
+  background: #343a51;
+}
+.countdown--dark .number {
+  color: white;
+}
+
+.countdown__timer {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8125rem;
+  margin-bottom: 2.5rem;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.countdown__timer > * {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: calc(25% - 0.8125rem);
+  overflow: hidden;
+  border-radius: 4px;
+  padding: 0.625rem 1rem;
+}
+.countdown__timer .number {
+  display: block;
+  line-height: 3rem;
+  transform: translateX(-2px);
+  margin-bottom: -0.5rem;
+  font-weight: 700;
+  font-size: 2rem;
+}
+.countdown__timer .label {
+  line-height: 1.75rem;
+  opacity: 0.5;
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+
 html {
   background: #262a3b;
 }
@@ -205,73 +273,6 @@ main.sign-up {
   margin-bottom: 1rem;
 }
 
-.countdown, .countdown--dark, .countdown--light {
-  width: 87.2%;
-  max-width: 448px;
-  color: white;
-  text-align: center;
-}
-.countdown--light {
-  color: #262a3b;
-}
-.countdown--light .countdown__timer > * {
-  background: rgba(82, 116, 255, 0.1);
-}
-.countdown--light .number {
-  color: #5274ff;
-}
-.countdown--dark {
-  color: #757c95;
-}
-.countdown--dark .countdown__timer > * {
-  background: #343a51;
-}
-.countdown--dark .number {
-  color: white;
-}
-.countdown p, .countdown--light p, .countdown--dark p {
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  margin-bottom: 1.125rem;
-  line-height: 3rem;
-  font-weight: 700;
-}
-.countdown .release-date, .countdown--light .release-date, .countdown--dark .release-date {
-  color: #5274ff;
-}
-
-.countdown__timer {
-  text-align: center;
-  display: flex;
-  justify-content: space-between;
-  gap: 0.8125rem;
-  margin-bottom: 2.5rem;
-  flex-direction: row;
-  flex-wrap: nowrap;
-}
-.countdown__timer > * {
-  flex-grow: 0;
-  flex-shrink: 0;
-  flex-basis: calc(25% - 0.8125rem);
-  overflow: hidden;
-  border-radius: 4px;
-  padding: 0.625rem 1rem;
-}
-.countdown__timer .number {
-  display: block;
-  line-height: 3rem;
-  transform: translateX(-2px);
-  margin-bottom: -0.5rem;
-  font-weight: 700;
-  font-size: 2rem;
-}
-.countdown__timer .label {
-  line-height: 1.75rem;
-  opacity: 0.5;
-  font-weight: 700;
-  font-size: 0.75rem;
-}
-
 #subscription-form {
   width: 87.2%;
   margin: 0 auto;
@@ -421,7 +422,7 @@ main.sign-up {
     text-align: center;
   }
 
-  .countdown, .countdown--light, .countdown--dark {
+  .countdown--specifics {
     text-align: start;
     max-width: 100%;
     width: 100%;
@@ -432,7 +433,10 @@ main.sign-up {
     margin-bottom: 2rem;
     grid-template-areas: "release button" "timer button";
   }
-  .countdown > a, .countdown--light > a, .countdown--dark > a {
+  .countdown--specifics p {
+    text-align: start;
+  }
+  .countdown--specifics > a {
     grid-area: button;
     margin: 0;
     justify-self: end;

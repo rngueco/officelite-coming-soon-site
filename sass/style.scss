@@ -1,14 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
-
-// Colors
-$blue: hsl(228, 100%, 66%);
-$light-blue: hsl(228, 100%, 75%);
-$dark-blue: hsl(228, 22%, 26%);
-$bluish-black: hsl(229, 22%, 19%);
-$bluish-grey: hsl(227, 13%, 52%);
-$soft-red: hsl(0, 83%, 65%);
-
-$main-font: 'Kumbh Sans', sans-serif;
+@use "variables" as *;
+@use "countdown" as *;
 
 html {
     // Body background is offset 170px towards the
@@ -267,100 +258,6 @@ main {
     }
 }
 
-.countdown {
-    width: 87.2%;
-    max-width: 448px;
-    color: white;
-    text-align: center;
-
-    &--light {
-        @extend .countdown;
-        color: $bluish-black;
-
-        .countdown__timer > * {
-            background: hsl(228, 100%, 66%, 0.1);
-        }
-
-        .number {
-            color: $blue;
-        }
-    }
-
-    &--dark {
-        @extend .countdown;
-        color: $bluish-grey;
-
-        .countdown__timer > * {
-            background: $dark-blue;
-        }
-
-        .number {
-            color: white;
-        }
-    }
-
-    p {
-        text: {
-            transform: uppercase;
-        }
-
-        letter-spacing: 5px;
-        margin-bottom: 1.125rem;
-        line-height: 3rem;
-        font: {
-            weight: 700;
-        }
-    }
-
-    .release-date {
-        color: $blue;
-    }
-}
-
-.countdown__timer {
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-    gap: 0.8125rem;
-    margin-bottom: 2.5rem;
-    flex: {
-        direction: row;
-        wrap: nowrap;
-    }
-
-    & > * {
-        flex: {
-            grow: 0;
-            shrink: 0;
-            basis: calc(25% - 0.8125rem);
-        }
-
-        overflow: hidden;
-        border-radius: 4px;
-        padding: 0.625rem 1rem;
-    }
-
-    & .number {
-        display: block;
-        line-height: 3rem;
-        transform: translateX(-2px);
-        margin-bottom: -0.5rem;
-        font: {
-            weight: 700;
-            size: 2rem;
-        }
-    }
-
-    & .label {
-        line-height: 1.75rem;
-        opacity: 0.5;
-        font: {
-            weight: 700;
-            size: 0.75rem;
-        }
-    }
-}
-
 #subscription-form {
     width: 87.2%;
     margin: 0 auto;
@@ -557,7 +454,7 @@ main {
         text-align: center;
     }
 
-    .countdown {
+    .countdown--specifics {
         text-align: start;
         max-width: 100%;
         width: 100%;
@@ -569,6 +466,10 @@ main {
         grid-template-areas: 
             "release button"
             "timer button";
+
+        p {
+            text-align: start;
+        }
 
         & > a {
             grid-area: button;

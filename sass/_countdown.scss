@@ -1,0 +1,114 @@
+@use "variables" as *;
+
+// --- CONFIGURABLES --- //
+$width: 87.2% !default;
+$align: center !default;
+$highlight: hsl(228, 100%, 66%) !default;
+
+// Light theme
+$light-box: hsl(228, 100%, 66%, 0.1) !default;
+$light-accent: hsl(228, 100%, 66%) !default;
+$light-text: hsl(229, 22%, 19%) !default;
+
+// Dark theme
+$dark-box: hsl(228, 22%, 26%) !default;
+$dark-accent: white !default;
+$dark-text: hsl(227, 13%, 52%) !default;
+
+.countdown {
+    width: $width;
+    max-width: 448px;
+
+    // Defaults.
+    color: $light-text;
+    text-align: $align;
+
+    p {
+        letter-spacing: 5px;
+        margin-bottom: 1.125rem;
+        line-height: 3rem;
+
+        text: {
+            transform: uppercase;
+            align: $align;
+        }
+
+        font: {
+            weight: 700;
+        }
+    }
+
+    .release-date {
+        color: $highlight;
+    }
+
+    &--light {
+        @extend .countdown;
+        color: $light-text;
+
+        .countdown__timer > * {
+            background: $light-box;
+        }
+
+        .number {
+            color: $light-accent;
+        }
+    }
+
+    &--dark {
+        @extend .countdown;
+        color: $dark-text;
+
+        .countdown__timer > * {
+            background: $dark-box;
+        }
+
+        .number {
+            color: $dark-accent;
+        }
+    }
+}
+
+.countdown__timer {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.8125rem;
+    margin-bottom: 2.5rem;
+    flex: {
+        direction: row;
+        wrap: nowrap;
+    }
+
+    & > * {
+        flex: {
+            grow: 0;
+            shrink: 0;
+            basis: calc(25% - 0.8125rem);
+        }
+
+        overflow: hidden;
+        border-radius: 4px;
+        padding: 0.625rem 1rem;
+    }
+
+    & .number {
+        display: block;
+        line-height: 3rem;
+        transform: translateX(-2px);
+        margin-bottom: -0.5rem;
+        font: {
+            weight: 700;
+            size: 2rem;
+        }
+    }
+
+    & .label {
+        line-height: 1.75rem;
+        opacity: 0.5;
+        font: {
+            weight: 700;
+            size: 0.75rem;
+        }
+    }
+}

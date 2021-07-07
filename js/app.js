@@ -44,17 +44,13 @@ const Officelite = {
             ],
             releaseDate: release_date
         }
-    }, 
-    computed: {
-        printReleaseDate() {
-            return this.releaseDate.getDay() + ' ' + months[this.releaseDate.getMonth()] + ' ' + this.releaseDate.getFullYear()
-        }
     }
 }
 
 const app = Vue.createApp(Officelite)
     .component('countdown-timer', {
         template: `
+        <p>Coming <span class="release-date">{{ printReleaseDate }}</span></p>
         <div class="countdown__timer">
             <div>
                 <span class="number">{{ days }}</span>
@@ -120,6 +116,9 @@ const app = Vue.createApp(Officelite)
             getSeconds() {
                 if (this.seconds < 0) this.seconds = 59
                 return this.seconds
+            },
+            printReleaseDate() {
+                return this.end.getDay() + ' ' + months[this.end.getMonth()] + ' ' + this.end.getFullYear()
             }
         }
     })
