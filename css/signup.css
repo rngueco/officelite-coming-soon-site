@@ -190,4 +190,29 @@ body {
   }
 }
 
+main {
+  padding-bottom: 5.4375rem;
+  display: flex;
+  gap: 4rem;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.introduction__content {
+  width: 87.2%;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+.introduction__content p {
+  color: #757c95;
+}
+
+.countdown--light {
+  margin: 0 auto;
+}
+
 /*# sourceMappingURL=signup.css.map */

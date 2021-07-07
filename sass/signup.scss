@@ -6,3 +6,33 @@
 @use "layout/background" as * with(
     $mobile-bg-breakpoint: 74%
 );
+
+main {
+    padding-bottom: 5.4375rem;
+    display: flex;
+    gap: 4rem;
+    flex: {
+        direction: column;
+        wrap: nowrap;
+    }
+}
+
+.introduction__content {
+    width: 87.2%;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    gap: 1rem;
+    flex: {
+        direction: column;
+        wrap: nowrap;
+    }
+
+    p {
+        color: $bluish-grey;
+    }
+}
+
+.countdown--light {
+    margin: 0 auto;
+}

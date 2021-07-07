@@ -155,22 +155,6 @@ body {
   }
 }
 
-body.sign-up {
-  background: url("../assets/home/bg-pattern-header.svg"), url("../assets/home/bg-pattern-footer.svg"), linear-gradient(to bottom, #FAFAFA 74%, #262a3b 74%, #262a3b 150%);
-  background-size: 122vw, 320vw, 100vw;
-  background-position-x: center, center, center;
-  background-position-y: top -170px, bottom -110px, center;
-  background-repeat: no-repeat, no-repeat, repeat;
-}
-
-*, * *, *::after, *::before {
-  box-sizing: border-box;
-}
-
-h1, p {
-  margin: 0;
-}
-
 main {
   width: 100%;
   display: flex;
