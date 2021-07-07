@@ -2,7 +2,6 @@
 
 // -- CONFIGURABLES -- // 
 $primary-color: hsl(228, 100%, 66%) !default;
-@debug color.adjust($primary-color, $alpha: -0.8474);
 
 .button {
     border-radius: 1.75rem;

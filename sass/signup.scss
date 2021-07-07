@@ -1,10 +1,13 @@
 @use "abstract/variables" as *;
+
 @use "component/countdown" as *;
 @use "component/subscription-form" as *;
 @use "component/buttons" as *;
+
 @use "layout/header" as *;
 @use "layout/background" as * with(
-    $mobile-bg-breakpoint: 74%
+    $mobile-bg-breakpoint: 74%,
+    $tablet-bg-breakpoint: 71%
 );
 
 main {
@@ -35,4 +38,21 @@ main {
 
 .countdown--light {
     margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    main {
+        padding-bottom: 7.6875rem;
+        gap: 2.5rem;
+    }
+
+    .introduction__content {
+        h1 {
+            margin-top: 3.625rem;
+        }
+    }
+
+    .subscription-form {
+        margin-top: 1.5rem;
+    }
 }
