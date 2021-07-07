@@ -80,7 +80,6 @@ main {
 }
 
 .button, .button--secondary-white, .button--secondary-blue, .button--primary {
-  display: block;
   border-radius: 1.75rem;
   padding: 0.875rem 2.5625rem;
   text-decoration: none;
@@ -159,6 +158,59 @@ main {
 }
 .plans__perks > li:not(:last-child) {
   margin-bottom: 1rem;
+}
+
+.countdown {
+  width: 87.2%;
+  color: white;
+  text-align: center;
+  padding-bottom: 6.25rem;
+}
+.countdown p {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-bottom: 1.125rem;
+  line-height: 3rem;
+  font-weight: 700;
+}
+.countdown .release-date {
+  color: #5274ff;
+}
+.countdown a {
+  margin-bottom: 6.25rem;
+}
+
+.countdown__timer {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8125rem;
+  margin-bottom: 2.5rem;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.countdown__timer > * {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: calc(25% - 0.8125rem);
+  overflow: hidden;
+  border-radius: 4px;
+  background: #343a51;
+  padding: 0.625rem 1rem;
+}
+.countdown__timer .number {
+  display: block;
+  line-height: 3rem;
+  transform: translateX(-2px);
+  margin-bottom: -0.5rem;
+  font-weight: 700;
+  font-size: 2rem;
+}
+.countdown__timer .label {
+  line-height: 1.75rem;
+  opacity: 0.5;
+  font-weight: 700;
+  font-size: 0.75rem;
 }
 
 /*# sourceMappingURL=style.css.map */

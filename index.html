@@ -39,9 +39,9 @@
       </li>
     </ul>
     <div class="countdown">
-      <p>Coming {{ printReleaseDate }}</p>
+      <p>Coming <span class="release-date">{{ printReleaseDate }}</span></p>
       <countdown-timer v-bind:end="releaseDate"></countdown-timer>
-      <a href="">Get Started</a>
+      <a href="#" class="button--primary">Get Started</a>
     </div>
   </main>
 
