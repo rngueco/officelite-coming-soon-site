@@ -10,13 +10,21 @@ $soft-red: hsl(0, 83%, 65%);
 
 $main-font: 'Kumbh Sans', sans-serif;
 
+html {
+    // Body background is offset 170px towards the
+    // -y position, so there's an empty space at the
+    // bottom of the document. 
+    background: $bluish-black;
+}
+
 body {
-    background: url("../assets/home/bg-pattern-header.svg"), #FAFAFA;
+    position: relative;
+    background: url("../assets/home/bg-pattern-header.svg"), url("../assets/home/bg-pattern-footer.svg"), linear-gradient(to bottom, #FAFAFA 68%, $bluish-black 68%, $bluish-black 150%);
     background: {
-        size: 122vw;
-        position-x: center;
-        position-y: top -170px;
-        repeat: no-repeat;
+        size: 122vw, 320vw;
+        position-x: center, center;
+        position-y: top -170px, bottom -110px;
+        repeat: no-repeat, no-repeat;
     }
     margin: 0;
     padding: 0;
@@ -149,6 +157,7 @@ main {
     align-items: center;
     gap: 2rem;
     padding: 2.5rem 0;
+    color: $bluish-black;
     flex: {
         direction: column;
         wrap: nowrap;
@@ -156,23 +165,51 @@ main {
 
     &:nth-child(2) {
         @extend .plans__plan;
+        color: white;
         background: url("../assets/home/bg-pattern-pricing.svg"), $blue;
         background: {
-            size: 100%;
+            size: 260%;
+            position-x: center;
+            position-y: bottom;
+        }
+
+        .button {
+            background: white;
+            color: $blue;
+        }
+
+        .plans__perks {
+            color: inherit;
+            opacity: 0.75;
         }
     }
 }
 
 .plans__plan-name {
-    color: $bluish-black;
     font: {
         size: 1.25rem;
         weight: 700;
     }
 }
 
+.plans__plan-pricing {
+    display: block;
+    text-align: center;
+    font: {
+        weight: 700;
+        size: 3.5rem;
+    }
+}
+
 .plans__perks {
     list-style: none;
     text-align: center;
+    line-height: 1.75rem;
+    color: $bluish-grey;
     padding: 0;
+    margin-top: 1.5rem;
+
+    & > li:not(:last-child) {
+        margin-bottom: 1rem;
+    }
 }
