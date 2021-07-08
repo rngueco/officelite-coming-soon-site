@@ -1,9 +1,11 @@
+@use "../abstract/variables" as *;
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
 
 // -- CONFIGURABLES -- // 
 $tablet-width: 768px !default;
 $desktop-width: 1260px !default;
 
+$primary-color: $blue;
 $font: 'Kumbh Sans' !default;
 $text: hsl(227, 13%, 52%) !default;
 
@@ -27,6 +29,7 @@ $text: hsl(227, 13%, 52%) !default;
         padding-bottom: 1rem;
         padding-inline-start: 1rem;
         font-family: $font, sans-serif;
+        line-height: 1rem;
 
         &::placeholder {
             font: {
@@ -35,6 +38,11 @@ $text: hsl(227, 13%, 52%) !default;
             }
 
             color: hsla(227, 14%, 52%, 0.5);
+        }
+
+        &:focus {
+            outline: none;
+            border-color: $primary-color;
         }
     }
 
@@ -51,6 +59,11 @@ $text: hsl(227, 13%, 52%) !default;
 
     input[type="submit"] {
         border: none;
+
+        &:focus {
+            outline: none;
+            transform: scale(102%);
+        }
     }
 
     @media (min-width: $tablet-width) {

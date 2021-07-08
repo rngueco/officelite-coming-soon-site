@@ -32,11 +32,16 @@ h1, p {
   padding-bottom: 1rem;
   padding-inline-start: 1rem;
   font-family: "Kumbh Sans", sans-serif;
+  line-height: 1rem;
 }
 .subscription-form input:not([type=submit])::placeholder, .subscription-form select::placeholder {
   font-size: 1rem;
   font-weight: 400;
   color: rgba(115, 123, 150, 0.5);
+}
+.subscription-form input:not([type=submit]):focus, .subscription-form select:focus {
+  outline: none;
+  border-color: #5274ff;
 }
 .subscription-form select {
   font-size: 1rem;
@@ -47,6 +52,10 @@ h1, p {
 }
 .subscription-form input[type=submit] {
   border: none;
+}
+.subscription-form input[type=submit]:focus {
+  outline: none;
+  transform: scale(102%);
 }
 @media (min-width: 768px) {
   .subscription-form {
@@ -254,8 +263,10 @@ main {
   flex-shrink: 0;
   width: 77%;
   margin: 0 auto;
+  padding: 1rem 0;
   display: grid;
   align-items: center;
+  align-content: center;
   row-gap: 2.5rem;
   grid-template-areas: "intro form" "timer form";
 }
@@ -287,6 +298,9 @@ main {
 
 .subscription-form {
   grid-area: form;
+}
+.subscription-form input[type=submit] {
+  width: 100%;
 }
 
 /*# sourceMappingURL=signup-desktop.css.map */
