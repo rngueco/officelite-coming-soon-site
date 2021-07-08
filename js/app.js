@@ -122,5 +122,34 @@ const app = Vue.createApp(Officelite)
             }
         }
     })
+    .component('signup-form', {
+        template: `
+        <form class="subscription-form">
+            <input type="text" v-model="name" aria-label="Full name" placeholder="Name" required>
+            <input type="email" v-model="email" aria-label="Email address" placeholder="Email Address" required>
+            <div class="select-wrapper">
+                <select v-model="plan_type" aria-label="Subscription type">
+                    <option v-for="plan in planslist" v-bind:value="plan.name"><span class="pack-label">{{ plan.name }} Pack </span><span class="pack-price">{{ plan.price }}</span></option>
+                </select>
+                <div class="select-arrow">
+                    <img src="assets/sign-up/icon-arrow-down.svg" alt="">
+                </div>
+            </div>
+            <input type="text" v-model="phone" aria-label="Phone number" placeholder="Phone Number" required>
+            <input type="text" v-model="company" aria-label="Company name" placeholder="Company" required>
+            <input type="submit" value="Get on the list" aria-label="Submit" class="button--primary">
+        </form>
+        `,
+        props: ['planslist'],
+        data() {
+            return {
+                name: '',
+                email: '',
+                plan_type: 'Basic',
+                phone: '',
+                company: ''
+            }
+        }
+    })
 
 app.mount('#app')
