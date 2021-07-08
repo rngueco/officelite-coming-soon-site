@@ -158,6 +158,12 @@ main {
     }
 }
 
+.countdown--specifics {
+    & a {
+        margin: 0 auto;
+    }
+}
+
 @media (min-width: 768px) {
     main {
         width: 89.8%;

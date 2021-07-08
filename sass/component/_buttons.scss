@@ -9,27 +9,45 @@ $font: $main-font !default;
     border-radius: 1.75rem;
     padding: calc(0.875rem + 3px) 2.5625rem 0.875rem 2.5625rem;
     text-decoration: none;
+    width: min-content;
+    white-space: nowrap;
     font: {
         size: 1rem;
         weight: 700;
         family: $font;
     }
 
+    &:hover {
+        cursor: pointer;
+    }
+
     &--primary {
         @extend .button;
         background: $primary-color;
         color: white;
+
+        &:hover {
+            background: color.adjust($primary-color, $lightness: 9%);
+        }
     }
 
     &--secondary-blue {
         @extend .button;
         background: color.adjust($primary-color, $alpha: -0.8474);
         color: $primary-color;
+
+        &:hover {
+            background: color.adjust($primary-color, $lightness: 9%, $alpha: -0.65);
+        }
     }
 
     &--secondary-white {
         @extend .button;
         background: white;
         color: $primary-color;
+
+        &:hover {
+            color: color.adjust($primary-color, $lightness: 9%);
+        }
     }
 }

@@ -65,21 +65,35 @@ h1, p {
   border-radius: 1.75rem;
   padding: calc(0.875rem + 3px) 2.5625rem 0.875rem 2.5625rem;
   text-decoration: none;
+  width: min-content;
+  white-space: nowrap;
   font-size: 1rem;
   font-weight: 700;
   font-family: "Kumbh Sans", sans-serif;
+}
+.button:hover, .button--secondary-white:hover, .button--secondary-blue:hover, .button--primary:hover {
+  cursor: pointer;
 }
 .button--primary {
   background: #5274ff;
   color: white;
 }
+.button--primary:hover {
+  background: #8099ff;
+}
 .button--secondary-blue {
   background: rgba(82, 116, 255, 0.1526);
   color: #5274ff;
 }
+.button--secondary-blue:hover {
+  background: rgba(128, 153, 255, 0.35);
+}
 .button--secondary-white {
   background: white;
   color: #5274ff;
+}
+.button--secondary-white:hover {
+  color: #8099ff;
 }
 
 .countdown, .countdown--dark, .countdown--light {
