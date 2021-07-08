@@ -1,7 +1,9 @@
 @use "sass:color";
+@use "../abstract/variables" as *;
 
 // -- CONFIGURABLES -- // 
 $primary-color: hsl(228, 100%, 66%) !default;
+$font: $main-font !default;
 
 .button {
     border-radius: 1.75rem;
@@ -10,6 +12,7 @@ $primary-color: hsl(228, 100%, 66%) !default;
     font: {
         size: 1rem;
         weight: 700;
+        family: $font;
     }
 
     &--primary {

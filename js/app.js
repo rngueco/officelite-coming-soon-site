@@ -118,7 +118,7 @@ const app = Vue.createApp(Officelite)
                 return this.seconds
             },
             printReleaseDate() {
-                return this.end.getDay() + ' ' + months[this.end.getMonth()] + ' ' + this.end.getFullYear()
+                return this.end.getDate() + ' ' + months[this.end.getMonth()] + ' ' + this.end.getFullYear()
             }
         }
     })

@@ -2,6 +2,7 @@
 
 // -- CONFIGURABLES -- // 
 $tablet-width: 768px !default;
+$desktop-width: 1260px !default;
 
 $font: 'Kumbh Sans' !default;
 $text: hsl(227, 13%, 52%) !default;
@@ -54,6 +55,11 @@ $text: hsl(227, 13%, 52%) !default;
 
     @media (min-width: $tablet-width) {
         max-width: 448px;
+        padding: 2.625rem;
+    }
+
+    @media (min-width: $desktop-width) {
+        max-width: 445px;
         padding: 2.625rem;
     }
 }

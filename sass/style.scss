@@ -1,6 +1,8 @@
 @use "abstract/variables" as *;
+
 @use "component/countdown" as *;
 @use "component/buttons" as *;
+
 @use "layout/header" as *;
 @use "layout/background" as *;
 
@@ -238,7 +240,6 @@ main {
         }
 
         & .number {
-            line-height: 3.5rem;
             font: {
                 size: 3.5rem;
             }
@@ -247,10 +248,6 @@ main {
         & label {
             margin-bottom: -0.5rem;
         }
-    }
-
-    #subscription-form {
-        max-width: 448px;
     }
 }
 

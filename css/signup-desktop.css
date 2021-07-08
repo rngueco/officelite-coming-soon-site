@@ -15,6 +15,73 @@ h1, p {
   margin: 0;
 }
 
+.subscription-form {
+  width: 87.2%;
+  margin: 0 auto;
+  background: white;
+  border-radius: 13px;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1.5rem;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+.subscription-form input:not([type=submit]), .subscription-form select {
+  border: none;
+  border-bottom: 1px solid rgba(115, 123, 150, 0.5);
+  padding-bottom: 1rem;
+  padding-inline-start: 1rem;
+  font-family: "Kumbh Sans", sans-serif;
+}
+.subscription-form input:not([type=submit])::placeholder, .subscription-form select::placeholder {
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgba(115, 123, 150, 0.5);
+}
+.subscription-form select {
+  font-size: 1rem;
+  font-weight: 700;
+}
+.subscription-form select .pack-label {
+  color: #757c95;
+}
+.subscription-form input[type=submit] {
+  border: none;
+}
+@media (min-width: 768px) {
+  .subscription-form {
+    max-width: 448px;
+    padding: 2.625rem;
+  }
+}
+@media (min-width: 1260px) {
+  .subscription-form {
+    max-width: 445px;
+    padding: 2.625rem;
+  }
+}
+
+.button, .button--secondary-white, .button--secondary-blue, .button--primary {
+  border-radius: 1.75rem;
+  padding: calc(0.875rem + 3px) 2.5625rem 0.875rem 2.5625rem;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: "Kumbh Sans", sans-serif;
+}
+.button--primary {
+  background: #5274ff;
+  color: white;
+}
+.button--secondary-blue {
+  background: rgba(82, 116, 255, 0.1526);
+  color: #5274ff;
+}
+.button--secondary-white {
+  background: white;
+  color: #5274ff;
+}
+
 .countdown, .countdown--dark, .countdown--light {
   width: 87.2%;
   max-width: 448px;
@@ -23,13 +90,13 @@ h1, p {
   flex-direction: column;
   flex-wrap: nowrap;
   color: #262a3b;
-  text-align: center;
+  text-align: start;
 }
 .countdown p, .countdown--dark p, .countdown--light p {
   letter-spacing: 5px;
   line-height: 3rem;
   text-transform: uppercase;
-  text-align: center;
+  text-align: start;
   font-weight: 700;
 }
 .countdown .release-date, .countdown--dark .release-date, .countdown--light .release-date {
@@ -103,73 +170,6 @@ h1, p {
   }
 }
 
-.subscription-form {
-  width: 87.2%;
-  margin: 0 auto;
-  background: white;
-  border-radius: 13px;
-  padding: 1.5rem;
-  display: flex;
-  gap: 1.5rem;
-  flex-direction: column;
-  flex-wrap: nowrap;
-}
-.subscription-form input:not([type=submit]), .subscription-form select {
-  border: none;
-  border-bottom: 1px solid rgba(115, 123, 150, 0.5);
-  padding-bottom: 1rem;
-  padding-inline-start: 1rem;
-  font-family: "Kumbh Sans", sans-serif;
-}
-.subscription-form input:not([type=submit])::placeholder, .subscription-form select::placeholder {
-  font-size: 1rem;
-  font-weight: 400;
-  color: rgba(115, 123, 150, 0.5);
-}
-.subscription-form select {
-  font-size: 1rem;
-  font-weight: 700;
-}
-.subscription-form select .pack-label {
-  color: #757c95;
-}
-.subscription-form input[type=submit] {
-  border: none;
-}
-@media (min-width: 768px) {
-  .subscription-form {
-    max-width: 448px;
-    padding: 2.625rem;
-  }
-}
-@media (min-width: 1260px) {
-  .subscription-form {
-    max-width: 445px;
-    padding: 2.625rem;
-  }
-}
-
-.button, .button--secondary-white, .button--secondary-blue, .button--primary {
-  border-radius: 1.75rem;
-  padding: calc(0.875rem + 3px) 2.5625rem 0.875rem 2.5625rem;
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: 700;
-  font-family: "Kumbh Sans", sans-serif;
-}
-.button--primary {
-  background: #5274ff;
-  color: white;
-}
-.button--secondary-blue {
-  background: rgba(82, 116, 255, 0.1526);
-  color: #5274ff;
-}
-.button--secondary-white {
-  background: white;
-  color: #5274ff;
-}
-
 header {
   width: 100%;
 }
@@ -198,7 +198,7 @@ header {
   }
 }
 body {
-  background: url("../assets/home/bg-pattern-header.svg"), url("../assets/home/bg-pattern-footer.svg"), linear-gradient(to bottom, #FAFAFA 74%, #262a3b 74%);
+  background: url("../assets/home/bg-pattern-header.svg"), url("../assets/home/bg-pattern-footer.svg"), linear-gradient(to right, #FAFAFA 58%, #262a3b 58%);
   background-size: 122vw, 320vw, 100vw;
   background-position-x: center, center, center;
   background-position-y: top -170px, bottom -110px, center;
@@ -206,7 +206,7 @@ body {
 }
 @media (min-width: 768px) {
   body {
-    background: url("../assets/home/bg-pattern-header.svg"), url("../assets/home/bg-pattern-footer.svg"), linear-gradient(to bottom, #FAFAFA 71%, #262a3b 71%);
+    background: url("../assets/home/bg-pattern-header.svg"), url("../assets/home/bg-pattern-footer.svg"), linear-gradient(to right, #FAFAFA 55%, #262a3b 55%);
     background-size: 666px, 1454px, 100vw;
     background-position-x: right -350px, center, center;
     background-position-y: top -419px, bottom -483px, center;
@@ -215,7 +215,7 @@ body {
 }
 @media (min-width: 1260px) {
   body {
-    background: url("../assets/home/bg-pattern-header.svg"), url("../assets/home/bg-pattern-footer.svg"), linear-gradient(to bottom, #FAFAFA 66%, #262a3b 66%);
+    background: url("../assets/home/bg-pattern-header.svg"), url("../assets/home/bg-pattern-footer.svg"), linear-gradient(to right, #FAFAFA 70%, #262a3b 70%);
     background-size: 1134px, 2036px, 100vw;
     background-position-x: right -293px, left -706px, center;
     background-position-y: top -164px, bottom -819px, center;
@@ -223,47 +223,56 @@ body {
   }
 }
 
-main {
-  padding-bottom: 5.4375rem;
+body {
+  min-height: 100vh;
   display: flex;
-  gap: 4rem;
   flex-direction: column;
   flex-wrap: nowrap;
+}
+
+header {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+main {
+  flex-grow: 1;
+  flex-shrink: 0;
+  width: 77%;
+  margin: 0 auto;
+  display: grid;
+  align-items: center;
+  row-gap: 2.5rem;
+  grid-template-areas: "intro form" "timer form";
 }
 
 .introduction__content {
-  width: 87.2%;
-  margin: 0 auto;
-  text-align: center;
+  max-width: 540px;
+  grid-area: intro;
+  align-self: end;
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   flex-direction: column;
   flex-wrap: nowrap;
 }
+.introduction__content h1 {
+  line-height: 4rem;
+  font-size: 3.5rem;
+  font-weight: 700;
+}
 .introduction__content p {
   color: #757c95;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
 .countdown--light {
-  margin: 0 auto;
+  grid-area: timer;
+  align-self: start;
 }
 
-@media (min-width: 768px) {
-  main {
-    padding-bottom: 7.6875rem;
-    gap: 2.5rem;
-  }
-
-  .introduction__content {
-    max-width: 573px;
-  }
-  .introduction__content h1 {
-    margin-top: 3.625rem;
-  }
-
-  .subscription-form {
-    margin-top: 1.5rem;
-  }
+.subscription-form {
+  grid-area: form;
 }
 
-/*# sourceMappingURL=signup.css.map */
+/*# sourceMappingURL=signup-desktop.css.map */

@@ -2,6 +2,7 @@
 // -- CONFIGURABLES -- // 
 $top-color: #FAFAFA !default;
 $bottom-color: hsl(229, 22%, 19%) !default;
+$orientation: to bottom !default;
 
 $mobile-bg-breakpoint: 58% !default;
 
@@ -13,9 +14,9 @@ $desktop-bg-breakpoint: 66% !default;
 
 body {
     background: 
-        url("../../assets/home/bg-pattern-header.svg"), 
-        url("../../assets/home/bg-pattern-footer.svg"),
-        linear-gradient(to bottom, $top-color $mobile-bg-breakpoint, $bottom-color $mobile-bg-breakpoint);
+        url("../assets/home/bg-pattern-header.svg"), 
+        url("../assets/home/bg-pattern-footer.svg"),
+        linear-gradient($orientation, $top-color $mobile-bg-breakpoint, $bottom-color $mobile-bg-breakpoint);
     background: {
         size: 122vw, 320vw, 100vw;
         position-x: center, center, center;
@@ -25,9 +26,9 @@ body {
 
     @media (min-width: $tablet-width) {
         background: 
-            url("../../assets/home/bg-pattern-header.svg"), 
-            url("../../assets/home/bg-pattern-footer.svg"), 
-            linear-gradient(to bottom, $top-color $tablet-bg-breakpoint, $bottom-color $tablet-bg-breakpoint);
+            url("../assets/home/bg-pattern-header.svg"), 
+            url("../assets/home/bg-pattern-footer.svg"), 
+            linear-gradient($orientation, $top-color $tablet-bg-breakpoint, $bottom-color $tablet-bg-breakpoint);
         background: {
             size: 666px, 1454px, 100vw;
             position-x: right -350px, center, center;
@@ -38,9 +39,9 @@ body {
 
     @media (min-width: $desktop-width) {
         background: 
-            url("../../assets/home/bg-pattern-header.svg"), 
-            url("../../assets/home/bg-pattern-footer.svg"), 
-            linear-gradient(to bottom, $top-color $desktop-bg-breakpoint, $bottom-color $desktop-bg-breakpoint);
+            url("../assets/home/bg-pattern-header.svg"), 
+            url("../assets/home/bg-pattern-footer.svg"), 
+            linear-gradient($orientation, $top-color $desktop-bg-breakpoint, $bottom-color $desktop-bg-breakpoint);
         background: {
             size: 1134px, 2036px, 100vw;
             position-x: right -293px, left -706px, center;

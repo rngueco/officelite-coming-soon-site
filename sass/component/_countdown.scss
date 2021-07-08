@@ -5,6 +5,9 @@ $width: 87.2% !default;
 $align: center !default;
 $highlight: hsl(228, 100%, 66%) !default;
 
+$desktop-width: 1260px !default;
+$tablet-width: 768px !default;
+
 // Light theme
 $light-box: hsl(228, 100%, 66%, 0.1) !default;
 $light-accent: hsl(228, 100%, 66%) !default;
@@ -13,11 +16,18 @@ $light-text: hsl(229, 22%, 19%) !default;
 // Dark theme
 $dark-box: hsl(228, 22%, 26%) !default;
 $dark-accent: white !default;
-$dark-text: hsl(227, 13%, 52%) !default;
+$dark-text: white !default;
 
 .countdown {
     width: $width;
     max-width: 448px;
+
+    display: flex;
+    gap: 0.5rem;
+    flex: {
+        direction: column;
+        wrap: nowrap;
+    }
 
     // Defaults.
     color: $light-text;
@@ -25,7 +35,6 @@ $dark-text: hsl(227, 13%, 52%) !default;
 
     p {
         letter-spacing: 5px;
-        margin-bottom: 1.125rem;
         line-height: 3rem;
 
         text: {
@@ -90,16 +99,26 @@ $dark-text: hsl(227, 13%, 52%) !default;
         overflow: hidden;
         border-radius: 4px;
         padding: 0.625rem 1rem;
+
+        @media (min-width: $tablet-width) {
+            padding: 1rem 0.875rem;
+            border-radius: 13px;
+        }
     }
 
     & .number {
         display: block;
-        line-height: 3rem;
+        padding: auto;
         transform: translateX(-2px);
         margin-bottom: -0.5rem;
         font: {
             weight: 700;
             size: 2rem;
+        }
+
+        @media (min-width: $tablet-width) {
+            font-size: 3.5rem;
+            height: 4rem;
         }
     }
 
@@ -109,6 +128,10 @@ $dark-text: hsl(227, 13%, 52%) !default;
         font: {
             weight: 700;
             size: 0.75rem;
+        }
+
+        @media (min-width: $tablet-width) {
+            font-size: 1rem;
         }
     }
 }
