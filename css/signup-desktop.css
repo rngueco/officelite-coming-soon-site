@@ -43,7 +43,21 @@ h1, p {
   outline: none;
   border-color: #5274ff;
 }
+.subscription-form .select-wrapper {
+  width: 100%;
+  position: relative;
+}
+.subscription-form .select-wrapper .select-arrow {
+  position: absolute;
+  top: -0.1rem;
+  right: 1rem;
+  transition: transform 0.3s ease;
+}
 .subscription-form select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
   font-size: 1rem;
   font-weight: 700;
 }
@@ -68,6 +82,10 @@ h1, p {
     max-width: 445px;
     padding: 2.625rem;
   }
+}
+
+.flip {
+  transform: rotate(180deg);
 }
 
 .button, .button--secondary-white, .button--secondary-blue, .button--primary {

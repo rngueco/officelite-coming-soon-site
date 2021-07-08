@@ -26,9 +26,14 @@
     <form action="" class="subscription-form">
       <input type="text" name="name" id="name" aria-label="Full name" placeholder="Name">
       <input type="email" name="email" id="email" aria-label="Email address" placeholder="Email Address">
-      <select name="plan-type" id="plan-type" aria-label="Subscription type">
-        <option v-for="plan in plansList" v-bind:value="plan.name"><span class="pack-label">{{ plan.name }} Pack </span><span class="pack-price">{{ plan.price }}</span></option>
-      </select>
+      <div class="select-wrapper">
+        <select name="plan-type" id="plan-type" aria-label="Subscription type">
+          <option v-for="plan in plansList" v-bind:value="plan.name"><span class="pack-label">{{ plan.name }} Pack </span><span class="pack-price">{{ plan.price }}</span></option>
+        </select>
+        <div class="select-arrow">
+          <img src="assets/sign-up/icon-arrow-down.svg" alt="">
+        </div>
+      </div>
       <input type="text" name="phone" id="phone" aria-label="Phone number" placeholder="Phone Number">
       <input type="text" name="company" id="company" aria-label="Company name" placeholder="Company">
       <input type="submit" value="Get on the list" aria-label="Submit" class="button--primary">

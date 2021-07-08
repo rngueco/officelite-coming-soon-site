@@ -46,7 +46,26 @@ $text: hsl(227, 13%, 52%) !default;
         }
     }
 
+    .select-wrapper {
+        width: 100%;
+        position: relative;
+
+        .select-arrow {
+            position: absolute;
+            top: -0.1rem;
+            right: 1rem;
+            transition: transform 0.3s ease;
+        }
+    }
+
     select {
+        // Remove default arrow
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+
+        width: 100%;
+
         font: {
             size: 1rem;
             weight: 700;
@@ -75,4 +94,8 @@ $text: hsl(227, 13%, 52%) !default;
         max-width: 445px;
         padding: 2.625rem;
     }
+}
+
+.flip {
+    transform: rotate(180deg);
 }
