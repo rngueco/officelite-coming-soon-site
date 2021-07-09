@@ -73,32 +73,18 @@ const app = Vue.createApp(Officelite)
         props: ['end'],
         data() {
             return {
-                // Return how many days between release date and now
-                days: Math.floor((this.end.getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24)),
+                days: 0,
                 hours: 0,
                 minutes: 0,
-                seconds: 0,
-                start: new Date()
+                seconds: 0
             }
         },
         mounted() {
-            // Count down by 1 on all fields
-            this.days--
-            this.hours--
-            this.minutes--
+            // Get initial values first 
+            this.getRemainingTime()
+
+            // Start counting down per second
             this.seconds--
-
-            setInterval(() => {
-                this.days--
-            }, 86400000)
-
-            setInterval(() => {
-                this.hours--
-            }, 3600000)
-
-            setInterval(() => {
-                this.minutes--
-            }, 60000)
 
             setInterval(() => {
                 this.seconds--
@@ -106,19 +92,47 @@ const app = Vue.createApp(Officelite)
         },
         computed: {
             getHours() {
-                if (this.hours < 0) this.hours = 23
+                if (this.hours < 0) {
+                    this.hours = 23
+                    this.days--
+                }
                 return this.hours
             },
             getMinutes() {
-                if (this.minutes < 0) this.minutes = 59
+                if (this.minutes < 0) {
+                    this.minutes = 59
+                    this.hours--
+                }
                 return this.minutes
             },
             getSeconds() {
-                if (this.seconds < 0) this.seconds = 59
+                if (this.seconds < 0) {
+                    this.seconds = 59
+                    this.minutes--
+                }
                 return this.seconds
             },
             printReleaseDate() {
                 return this.end.getDate() + ' ' + months[this.end.getMonth()] + ' ' + this.end.getFullYear()
+            }
+        },
+        methods: {
+            getRemainingTime() {
+                const now = new Date()
+                const end = this.end
+                const distance = end.getTime() - now.getTime()
+
+                // Calculate remaining time
+                const days_remaining = Math.floor(distance / (1000 * 60 * 60 * 24))
+                const hours_remaining = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+                const minutes_remaining = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
+                const seconds_remaining = Math.floor((distance % (1000 * 60)) / 1000)
+
+                // Set all value to remaining time
+                this.days = days_remaining
+                this.hours = hours_remaining
+                this.minutes = minutes_remaining
+                this.seconds = seconds_remaining
             }
         }
     })
