@@ -96,21 +96,21 @@ const app = Vue.createApp(Officelite)
                     this.hours = 23
                     this.days--
                 }
-                return this.hours
+                return this.hours < 10 ? '0'+this.hours : this.hours
             },
             getMinutes() {
                 if (this.minutes < 0) {
                     this.minutes = 59
                     this.hours--
                 }
-                return this.minutes
+                return this.minutes < 10 ? '0'+this.minutes : this.minutes
             },
             getSeconds() {
                 if (this.seconds < 0) {
                     this.seconds = 59
                     this.minutes--
                 }
-                return this.seconds
+                return this.seconds < 10 ? '0'+this.seconds : this.seconds
             },
             printReleaseDate() {
                 return this.end.getDate() + ' ' + months[this.end.getMonth()] + ' ' + this.end.getFullYear()
