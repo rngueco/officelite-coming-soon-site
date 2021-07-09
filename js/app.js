@@ -124,9 +124,11 @@ const app = Vue.createApp(Officelite)
     })
     .component('signup-form', {
         template: `
-        <form class="subscription-form">
-            <input type="text" v-model="name" aria-label="Full name" placeholder="Name" required>
-            <input type="email" v-model="email" aria-label="Email address" placeholder="Email Address" required>
+        <form class="subscription-form" ref="form" @submit.prevent="validateForm">
+            <input type="text" v-model="name" @blur="validateName" v-bind:class="{ error: errors.includes('name') }" aria-label="Full name" placeholder="Name" required>
+            <span class="error-message" v-if="errors.includes('name')">Name is required.</span>
+            <input type="email" v-model="email" @blur="validateEmail" v-bind:class="{ error: errors.includes('email') }" aria-label="Email address" placeholder="Email Address" required>
+            <span class="error-message" v-if="errors.includes('email')">{{ emailErrorMsg }}</span>
             <div class="select-wrapper">
                 <select v-model="plan_type" aria-label="Subscription type">
                     <option v-for="plan in planslist" v-bind:value="plan.name"><span class="pack-label">{{ plan.name }} Pack </span><span class="pack-price">{{ plan.price }}</span></option>
@@ -135,8 +137,8 @@ const app = Vue.createApp(Officelite)
                     <img src="assets/sign-up/icon-arrow-down.svg" alt="">
                 </div>
             </div>
-            <input type="text" v-model="phone" aria-label="Phone number" placeholder="Phone Number" required>
-            <input type="text" v-model="company" aria-label="Company name" placeholder="Company" required>
+            <input type="text" v-model="phone" aria-label="Phone number" placeholder="Phone Number">
+            <input type="text" v-model="company" aria-label="Company name" placeholder="Company">
             <input type="submit" value="Get on the list" aria-label="Submit" class="button--primary">
         </form>
         `,
@@ -145,9 +147,44 @@ const app = Vue.createApp(Officelite)
             return {
                 name: '',
                 email: '',
+                emailErrorMsg: '',
                 plan_type: 'Basic',
                 phone: '',
-                company: ''
+                company: '',
+                errors: ['']
+            }
+        },
+        methods: {
+            validateForm() {
+                if (this.validateName && this.validateForm) this.$refs.form.submit()
+            },
+            validateName() {
+                // If name is empty on blur, then return an error message.
+                if (this.name == '') {
+                    this.errors.push('name');
+                    return false
+                }
+                else {
+                    this.errors = this.removeItem(this.errors, 'name')
+                    return true
+                }
+            },
+            validateEmail() {
+                // Check if email is invalid or empty, return error if so.
+                if (this.email == '') {
+                    this.errors.push('email');
+                    this.emailErrorMsg = 'Email address is required.'
+                }
+                else if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.email)) {
+                    this.errors.push('email');
+                    this.emailErrorMsg = 'Please enter a valid email address.'
+                }
+                else this.errors = this.removeItem(this.errors, 'email')
+            },
+            removeItem(arr, item) {
+                return arr.filter((i) => {
+                    return i != item
+                })
             }
         }
     })

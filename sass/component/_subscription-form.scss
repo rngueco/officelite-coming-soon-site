@@ -44,6 +44,15 @@ $text: hsl(227, 13%, 52%) !default;
             outline: none;
             border-color: $primary-color;
         }
+
+        &.error {
+            border-color: red;
+            background: url("../assets/sign-up/icon-cross.svg");
+            background: {
+                position-x: calc(100% - 0.75rem);
+                repeat: no-repeat;
+            }
+        }
     }
 
     .select-wrapper {
@@ -98,4 +107,10 @@ $text: hsl(227, 13%, 52%) !default;
 
 .flip {
     transform: rotate(180deg);
+}
+
+.error-message {
+    color: red;
+    font-size: 0.75rem;
+    transform: translateY(-1rem) translateX(1rem);
 }

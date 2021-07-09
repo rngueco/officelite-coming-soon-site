@@ -131,6 +131,12 @@ h1, p {
   outline: none;
   border-color: #5274ff;
 }
+.subscription-form input:not([type=submit]).error, .subscription-form select.error {
+  border-color: red;
+  background: url("../assets/sign-up/icon-cross.svg");
+  background-position-x: calc(100% - 0.75rem);
+  background-repeat: no-repeat;
+}
 .subscription-form .select-wrapper {
   width: 100%;
   position: relative;
@@ -174,6 +180,12 @@ h1, p {
 
 .flip {
   transform: rotate(180deg);
+}
+
+.error-message {
+  color: red;
+  font-size: 0.75rem;
+  transform: translateY(-1rem) translateX(1rem);
 }
 
 .button, .button--secondary-white, .button--secondary-blue, .button--primary {
